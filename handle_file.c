@@ -7,32 +7,29 @@
  * @frequency: store frequency of word
  * Return: void
  */
-void read_words(FILE *file, char *words[], int words_freq[], char *sentences[], int sentences_freq[])
+void read_words(FILE *file, char *words[], int words_freq[], int *words_count, char *sentences[], int sentences_freq[], int *sentences_count)
 {
-	char line[256];
+    char line[256];
 
-	while (fgets(line, sizeof(line), file) != NULL)
-	{
-		// get each word depend on space or new line
-		// cal word_freq
-		char *word_token = strtok(line, " \t\n")
-		while (word_token != NULL)
-		{
-			insert_word(word_token, words, words_freq);
-			word_token = strtok(NULL, " \t\n");
-		}
+    while (fgets(line, sizeof(line), file) != NULL)
+    {
+        // get each word depend on space or new line
+        // cal word_freq
+        char *word_token = strtok(line, " \t\n") while (word_token != NULL)
+        {
+            insert_word(word_token, words, words_freq, words_count);
+            word_token = strtok(NULL, " \t\n");
+        }
 
-		// get whole sentence and sentence_freq
-		char *sentence_token = strtok(line, ".!?");
-		while (sentence_token != NULL)
-		{
-			insert_sentence(sentence_token, sentences, sentences_freq);
-			sentence_token = strtok(NULL, ".!?");
-		}
-	}
+        // get whole sentence and sentence_freq
+        char *sentence_token = strtok(line, ".!?");
+        while (sentence_token != NULL)
+        {
+            insert_sentence(sentence_token, sentences, sentences_freq, sentences_count);
+            sentence_token = strtok(NULL, ".!?");
+        }
+    }
 }
-
-
 
 /**
  * write_data_in_file: store output in file

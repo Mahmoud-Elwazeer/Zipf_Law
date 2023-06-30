@@ -2,7 +2,14 @@
 
 int main()
 {
-	char name_file[100];
+	char *words[MAX_WORDS];
+	int word_frequencies[MAX_WORDS];
+	int word_count = 0;
+
+	char *sentences[MAX_SENTENCES];
+	int sentence_lengths[MAX_SENTENCES];
+	int sentence_count = 0 char name_file[100];
+
 	printf("please Enter Full Path of File\n");
 	printf("(EX: C:\\Users\\elwazeer\\Desktop\\Working\\textfile.txt\nOR textfile.txt if in same folder of executable file): ");
 	scanf("%s", name_file);
@@ -15,19 +22,20 @@ int main()
 		return 1;
 	}
 
-	int letterFrequency[26] = {0};
-	int wordLengthCount[MAX_WORD_LENGTH + 1] = {0};
-	int sentenceLengthCount[MAX_SENTENCE_LENGTH + 1] = {0};
-	char *words[MAX_WORD];
-	int frequency_words[MAX_WORD];
-/*	
-	calculateLetterFrequency(file, letterFrequency);
-	fseek(file, 0, SEEK_SET);
-	calculateWordLengths(file, wordLengthCount);
-	fseek(file, 0, SEEK_SET);
-	calculateSentenceLengths(file, sentenceLengthCount);
-*/
-// displayResults(letterFrequency, wordLengthCount, sentenceLengthCount);
+	printf("Word Frequencies:\n");
+	print_frequency(words, word_frequencies, word_count);
+	printf("\nSentence Frequencies:\n");
+	print_frequency(sentences, sentence_lengths, sentence_count);
+
+	// Free memory
+	for (int i = 0; i < word_count; i++)
+	{
+		free(words[i]);
+	}
+	for (int i = 0; i < sentence_count; i++)
+	{
+		free(sentences[i]);
+	}
 
 	dest_file = fopen("Output.txt", "w");
 	if (dest_file == NULL)
@@ -36,8 +44,8 @@ int main()
 		fclose(file);
 		return 1;
 	}
-	
-//	write_data_in_file(dest_file, letterFrequency, wordLengthCount, sentenceLengthCount);
+
+	//	write_data_in_file(dest_file, letterFrequency, wordLengthCount, sentenceLengthCount);
 	fclose(file);
 	fclose(dest_file);
 

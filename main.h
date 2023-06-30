@@ -8,7 +8,8 @@
 
 #define MAX_WORD_LENGTH 50
 #define MAX_SENTENCE_LENGTH 500
-#define MAX_WORD 2000
+#define MAX_WORDS 1000
+#define MAX_SENTENCES 1000
 
 void calculateLetterFrequency(FILE *file, int *frequency);
 void calculateWordLengths(FILE *file, int *lengthCount);
@@ -16,7 +17,6 @@ void calculateSentenceLengths(FILE *file, int *lengthCount);
 
 void displayResults(const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
 void write_data_in_file(FILE *file, const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
-
-char **split_string(char *str, char *delim);
+void read_words(FILE *file, char *words[], int words_freq[], int *words_count, char *sentences[], int sentences_freq[], int *sentences_count);
 
 #endif
