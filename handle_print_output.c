@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_letters(int frequency)
+void print_letters(int frequency[])
 {
     int i;
     printf("Letter Frequency:\n");

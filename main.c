@@ -29,6 +29,7 @@ int main()
 	fseek(file, 0, SEEK_SET);
 	read_words(file, words, word_frequencies, &word_count, sentences, sentence_lengths, &sentence_count);
 
+	print_letters(letterFrequency);
 	printf("Word Frequencies:\n");
 	print_frequency(words, word_frequencies, word_count);
 	printf("\nSentence Frequencies:\n");
