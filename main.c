@@ -2,6 +2,8 @@
 
 int main()
 {
+	int letterFrequency[26] = {0};
+
 	char *words[MAX_WORDS];
 	int word_frequencies[MAX_WORDS];
 	int word_count = 0;
@@ -16,13 +18,15 @@ int main()
 	printf("(EX: C:\\Users\\elwazeer\\Desktop\\Working\\textfile.txt\nOR textfile.txt if in same folder of executable file): ");
 	scanf("%s", name_file);
 
-		FILE *dest_file;
+	FILE *dest_file;
 	FILE *file = fopen(name_file, "r");
 	if (file == NULL)
 	{
 		printf("Unable to open file.\n");
 		return 1;
 	}
+	calculateLetterFrequency(file, letterFrequency);
+	fseek(file, 0, SEEK_SET);
 	read_words(file, words, word_frequencies, &word_count, sentences, sentence_lengths, &sentence_count);
 
 	printf("Word Frequencies:\n");

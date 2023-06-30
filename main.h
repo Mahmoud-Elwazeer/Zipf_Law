@@ -12,10 +12,8 @@
 #define MAX_SENTENCES 1000
 
 void calculateLetterFrequency(FILE *file, int *frequency);
-void calculateWordLengths(FILE *file, int *lengthCount);
-void calculateSentenceLengths(FILE *file, int *lengthCount);
+void print_letters(int frequency);
 
-void displayResults(const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
 void insert_word(const char *word, char *words[], int frequencies[], int *count);
 void insert_sentence(const char *sentence, char *sentences[], int sentence_lengths[], int *count);
 
