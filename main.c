@@ -36,14 +36,8 @@ int main()
 	print_frequency(sentences, sentence_lengths, sentence_count);
 
 	// Free memory
-	for (int i = 0; i < word_count; i++)
-	{
-		free(words[i]);
-	}
-	for (int i = 0; i < sentence_count; i++)
-	{
-		free(sentences[i]);
-	}
+	free_item(words, word_count);
+	free_item(sentences, sentence_count);
 
 	dest_file = fopen("Output.txt", "w");
 	if (dest_file == NULL)

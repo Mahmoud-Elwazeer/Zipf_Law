@@ -33,3 +33,18 @@ void print_frequency(char *items[], int frequencies[], int count)
         printf("%s\t%d\n", items[i], frequencies[i]);
     }
 }
+
+
+/**
+ * free_item - free for item
+ * @item: itme to free
+ * Return: void
+ */
+void free_item(char *items[], int count)
+{
+    // Free memory
+    for (int i = 0; i < count; i++)
+    {
+        free(items[i]);
+    }
+}   
