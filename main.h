@@ -16,6 +16,11 @@ void calculateWordLengths(FILE *file, int *lengthCount);
 void calculateSentenceLengths(FILE *file, int *lengthCount);
 
 void displayResults(const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
+void insert_word(const char *word, char *words[], int frequencies[], int *count);
+void insert_sentence(const char *sentence, char *sentences[], int sentence_lengths[], int *count);
+
+void print_frequency(char *items[], int frequencies[], int count);
+
 void write_data_in_file(FILE *file, const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
 void read_words(FILE *file, char *words[], int words_freq[], int *words_count, char *sentences[], int sentences_freq[], int *sentences_count);
 
