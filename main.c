@@ -18,14 +18,15 @@ int main()
 	int letterFrequency[26] = {0};
 	int wordLengthCount[MAX_WORD_LENGTH + 1] = {0};
 	int sentenceLengthCount[MAX_SENTENCE_LENGTH + 1] = {0};
-	char *word[MAX_WORD];
-	
+	char *words[MAX_WORD];
+	int frequency_words[MAX_WORD];
+/*	
 	calculateLetterFrequency(file, letterFrequency);
 	fseek(file, 0, SEEK_SET);
 	calculateWordLengths(file, wordLengthCount);
 	fseek(file, 0, SEEK_SET);
 	calculateSentenceLengths(file, sentenceLengthCount);
-
+*/
 // displayResults(letterFrequency, wordLengthCount, sentenceLengthCount);
 
 	dest_file = fopen("Output.txt", "w");
@@ -35,7 +36,8 @@ int main()
 		fclose(file);
 		return 1;
 	}
-	write_data_in_file(dest_file, letterFrequency, wordLengthCount, sentenceLengthCount);
+	
+//	write_data_in_file(dest_file, letterFrequency, wordLengthCount, sentenceLengthCount);
 	fclose(file);
 	fclose(dest_file);
 

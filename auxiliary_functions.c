@@ -6,7 +6,6 @@
  * @delim: pointer to string that compare to split
  * Return: array of sring content new split strings
  */
-
 char **split_string(char *str, char *delim)
 {
     char **splits;
