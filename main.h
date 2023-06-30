@@ -8,6 +8,7 @@
 
 #define MAX_WORD_LENGTH 50
 #define MAX_SENTENCE_LENGTH 500
+#define MAX_WORD 2000
 
 void calculateLetterFrequency(FILE *file, int *frequency);
 void calculateWordLengths(FILE *file, int *lengthCount);
