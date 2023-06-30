@@ -8,7 +8,8 @@ int main()
 
 	char *sentences[MAX_SENTENCES];
 	int sentence_lengths[MAX_SENTENCES];
-	int sentence_count = 0 char name_file[100];
+	int sentence_count = 0;
+	char name_file[100];
 
 	printf("please Enter Full Path of File\n");
 	printf("(EX: C:\\Users\\elwazeer\\Desktop\\Working\\textfile.txt\nOR textfile.txt if in same folder of executable file): ");

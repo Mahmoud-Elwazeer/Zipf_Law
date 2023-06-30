@@ -15,7 +15,8 @@ void read_words(FILE *file, char *words[], int words_freq[], int *words_count, c
     {
         // get each word depend on space or new line
         // cal word_freq
-        char *word_token = strtok(line, " \t\n") while (word_token != NULL)
+        char *word_token = strtok(line, " \t\n");
+        while (word_token != NULL)
         {
             insert_word(word_token, words, words_freq, words_count);
             word_token = strtok(NULL, " \t\n");
