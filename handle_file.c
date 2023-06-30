@@ -41,7 +41,7 @@ void read_words(FILE *file, char *words[], int words_freq[], int *words_count, c
  * @sentenceLengthCount: Sentence Lengths
  * Return: void
  */
-void write_data_in_file(FILE *file, const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount)
+void write_data_in_file(FILE *file, const int *frequency,  char *words[], int words_freq[], int words_count, char *sentences[], int sentences_freq[], int sentences_count)
 {
     fprintf(file, "Letter Frequency:\n");
     for (int i = 0; i < 26; i++)
@@ -50,18 +50,21 @@ void write_data_in_file(FILE *file, const int *frequency, const int *wordLengthC
     }
 
     fprintf(file, "\nWord Lengths:\n");
-    for (int i = 1; i <= MAX_WORD_LENGTH; i++)
+    fprintf(file, "word\tFrequency\n");
+    fprintf(file, "-----------------\n");
+    for (int i = 0; i < words_count; i++)
     {
-        if (wordLengthCount[i] == 0)
-            continue;
-        fprintf(file, "Word lenght %d: %d\n", i, wordLengthCount[i]);
+        fprintf(file, "%s\t%d\n", words[i], words_freq[i]);
     }
 
+
     fprintf(file, "\nSentence Lengths:\n");
-    for (int i = 1; i <= MAX_SENTENCE_LENGTH; i++)
+    fprintf(file, "nSentence\tFrequency\n");
+    fprintf(file, "-----------------\n");
+    for (int i = 0; i < sentences_count; i++)
     {
-        if (sentenceLengthCount[i] == 0)
-            continue;
-        fprintf(file, "Sentence Length %d: %d\n", i, sentenceLengthCount[i]);
+        fprintf(file, "%s\t%d\n", sentences[i], sentences_freq[i]);
     }
+
+    
 }

@@ -35,9 +35,7 @@ int main()
 	printf("\nSentence Frequencies:\n");
 	print_frequency(sentences, sentence_lengths, sentence_count);
 
-	// Free memory
-	free_item(words, word_count);
-	free_item(sentences, sentence_count);
+	
 
 	dest_file = fopen("Output.txt", "w");
 	if (dest_file == NULL)
@@ -47,7 +45,11 @@ int main()
 		return 1;
 	}
 
-	//	write_data_in_file(dest_file, letterFrequency, wordLengthCount, sentenceLengthCount);
+	write_data_in_file(dest_file, letterFrequency,  words, word_frequencies, word_count, sentences, sentence_lengths, sentence_count);
+	
+	// Free memory
+	free_item(words, word_count);
+	free_item(sentences, sentence_count);
 	fclose(file);
 	fclose(dest_file);
 

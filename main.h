@@ -19,7 +19,7 @@ void insert_sentence(const char *sentence, char *sentences[], int sentence_lengt
 
 void print_frequency(char *items[], int frequencies[], int count);
 
-void write_data_in_file(FILE *file, const int *frequency, const int *wordLengthCount, const int *sentenceLengthCount);
+void write_data_in_file(FILE *file, const int *frequency,  char *words[], int words_freq[], int words_count, char *sentences[], int sentences_freq[], int sentences_count);
 void read_words(FILE *file, char *words[], int words_freq[], int *words_count, char *sentences[], int sentences_freq[], int *sentences_count);
 
 void free_item(char *items[], int count);
