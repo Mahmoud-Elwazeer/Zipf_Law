@@ -1,0 +1,56 @@
+Letter Frequency:
+a: 7
+b: 0
+c: 2
+d: 2
+e: 7
+f: 0
+g: 1
+h: 7
+i: 1
+j: 0
+k: 3
+l: 7
+m: 6
+n: 4
+o: 6
+p: 1
+q: 0
+r: 1
+s: 4
+t: 3
+u: 3
+v: 1
+w: 0
+x: 0
+y: 3
+z: 0
+
+Word Lengths:
+word	Frequency
+-----------------
+hello	2
+my	1
+name	1
+is	1
+mahmoud	1
+Thank	1
+you	1
+very	1
+much	1
+Thanks	2
+Good	1
+please	1
+call	1
+me	1
+
+Sentence Lengths:
+nSentence	Frequency
+-----------------
+hello hello my name is mahmoud	1
+
+	6
+Thank you very much	1
+Thanks	2
+Good	1
+please call me	1
