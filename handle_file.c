@@ -13,6 +13,14 @@ void read_words(FILE *file, char *words[], int words_freq[], int *words_count, c
 
     while (fgets(line, sizeof(line), file) != NULL)
     {
+        // get whole sentence and sentence_freq
+        char *sentence_token = strtok(line, ".!?");
+        while (sentence_token != NULL)
+        {
+            insert_sentence(sentence_token, sentences, sentences_freq, sentences_count);
+            sentence_token = strtok(NULL, ".!?");
+        }
+
         // get each word depend on space or new line
         // cal word_freq
         char *word_token = strtok(line, " \t\n");
@@ -20,14 +28,6 @@ void read_words(FILE *file, char *words[], int words_freq[], int *words_count, c
         {
             insert_word(word_token, words, words_freq, words_count);
             word_token = strtok(NULL, " \t\n");
-        }
-
-        // get whole sentence and sentence_freq
-        char *sentence_token = strtok(line, ".!?");
-        while (sentence_token != NULL)
-        {
-            insert_sentence(sentence_token, sentences, sentences_freq, sentences_count);
-            sentence_token = strtok(NULL, ".!?");
         }
     }
 }
