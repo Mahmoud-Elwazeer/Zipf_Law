@@ -9,21 +9,21 @@ int main()
 	char *sentences[MAX_SENTENCES];
 	int sentence_lengths[MAX_SENTENCES];
 	int sentence_count = 0;
+
 	char name_file[100];
 
 	printf("please Enter Full Path of File\n");
 	printf("(EX: C:\\Users\\elwazeer\\Desktop\\Working\\textfile.txt\nOR textfile.txt if in same folder of executable file): ");
 	scanf("%s", name_file);
 
-	read_words(name_file, words, word_frequencies, &word_count, sentences, sentence_lengths, &sentence_count);
-
-	FILE *dest_file;
+		FILE *dest_file;
 	FILE *file = fopen(name_file, "r");
 	if (file == NULL)
 	{
 		printf("Unable to open file.\n");
 		return 1;
 	}
+	read_words(file, words, word_frequencies, &word_count, sentences, sentence_lengths, &sentence_count);
 
 	printf("Word Frequencies:\n");
 	print_frequency(words, word_frequencies, word_count);
