@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_letters - print letter frequency
+ *
+ * @frequency: frequencies of letters
+ * Return: void
+ */
 void print_letters(int frequency[])
 {
     int i;
@@ -10,6 +16,14 @@ void print_letters(int frequency[])
     }
 }
 
+/**
+ * print_frequency - print word or sentence frequency
+ *
+ * @items: word or sentences
+ * @frequencies: frequencies
+ * @count: count
+ * Return: void
+ */
 void print_frequency(char *items[], int frequencies[], int count)
 {
     printf("Item\tFrequency\n");

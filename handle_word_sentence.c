@@ -38,7 +38,16 @@ void insert_word(const char *word, char *words[], int frequencies[], int *count)
 
 void insert_sentence(const char *sentence, char *sentences[], int sentence_lengths[], int *count)
 {
+    for (int i = 0; i < *count; i++)
+    {
+        if (strcmp(sentences[i], sentence) == 0)
+        {
+            sentence_lengths[i]++;
+            return;
+        }
+    }
+
     sentences[*count] = strdup(sentence);
-    sentence_lengths[*count] = strlen(sentence);
+    sentence_lengths[*count] = 1;
     (*count)++;
 }
